@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-  // const [username, setUsername] = useState("")
-  // const [score, setScore] = useState(0)
- 
+
   // set username when singleplayer option is selected
   // alternatively: only submit username & score upon completion of game
   // -> saves database space
@@ -13,10 +11,11 @@ const Home = () => {
   /* handle http GET request here */
 
   return(
-    <div className='container-2'>
-      <h1 className='row'>Hangman</h1>
-      <div>
-        
+    <div className='container-2 center'>
+      <div className='row creepy-text-container'>
+        <h1 className='creepy-text'>HANGMAN</h1>
+        <h1 className='creepy-text'>HANGMAN</h1>
+        <h1 className='creepy-text'>HANGMAN</h1>
       </div>
       <div className='row'>
         <Link to="/singleplayer">
@@ -28,7 +27,7 @@ const Home = () => {
           <button className="btn-home">Multiplayer</button>
         </Link>
       </div>
-       <div className='row'>
+      <div className='row'>
         <Link to="/leaderboard">
           <button className="btn-home">Leaderboard</button>
         </Link>
