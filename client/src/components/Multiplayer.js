@@ -31,8 +31,7 @@ const Multiplayer = () => {
   const bonus = (time > 60000 || status === "L") ? 0 : MAX_BONUS - time
   const endMessage = status === "W" ? "You won!" : "You lost!"
 
-  
-const imagesHangman = [hangman1, hangman2, hangman3, hangman4, hangman5, hangman6, hangman7];
+  const imagesHangman = [hangman1, hangman2, hangman3, hangman4, hangman5, hangman6, hangman7];
 
   const showModal = () => {
     setIsOpenModal(true)
