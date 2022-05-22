@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
-import { CSSTransition } from "react-transition-group";
+import React from "react";
 import { Link } from "react-router-dom";
+import Modal from "./modal/Modal";
+import ModalBody from "./modal/ModalBody";
+import ModalFooter from "./modal/ModalFooter";
+import ModalHeader from "./modal/ModalHeader";
+import ModalTitle from "./modal/ModalTitle";
 
-const SetWordModal = (props) => {
-  const nodeRef = useRef(null)
-  
+const SetWordModal = (props) => {  
   const handleSubmit = (e) => {
     e.preventDefault()
     props.setWord(props.word.toUpperCase())
@@ -12,33 +14,22 @@ const SetWordModal = (props) => {
   }
 
   return (
-    <>
-      <CSSTransition
-        nodeRef={nodeRef}
-        in={props.show}
-        unmountOnExit
-        timeout={{ enter: 0, exit: 300 }}
-      >
-        <div ref={nodeRef} className={`modal ${props.show ? 'show' : ''}`}>
-          <form onSubmit={handleSubmit}>
-            <div className="modal-content">
-              <div className="modal-header">
-                <h4 className="modal-title">{props.title}</h4>
-              </div>
-              <div className="modal-body">
-                <label htmlFor="word">Please enter a word:</label>
-                <br/>
-                <input className="form-control" type="text" name="word" onChange={e => props.setWord(e.target.value)} required/>
-              </div>
-              <div className="modal-footer">
-                <button className="btn" type="submit">Play</button>
-                <Link to="/"><button className="btn-close">Back to Home</button></Link>
-              </div>
-            </div>
-          </form>
-        </div>
-      </CSSTransition>
-    </>
+    <Modal show={props.show} onClose={props.onClose}>
+      <ModalHeader>
+        <ModalTitle>Multiplayer</ModalTitle>
+      </ModalHeader>
+      <form onSubmit={handleSubmit}>
+        <ModalBody>
+          <label htmlFor="word">Please enter a word:</label>
+          <br/>
+          <input className="form-control" type="text" name="word" onChange={e => props.setWord(e.target.value)} required/>       
+        </ModalBody>
+        <ModalFooter>
+          <button className="btn" type="submit">Play</button>
+          <Link to="/"><button className="btn-close">Back to Home</button></Link>
+        </ModalFooter>
+      </form>
+    </Modal>
   )
 }
 

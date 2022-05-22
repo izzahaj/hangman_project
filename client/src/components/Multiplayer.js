@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import SetWordModal from "./SetWordModal";
-import Modal from "./Modal";
 import Stopwatch from "./Stopwatch";
+import Modal from "./modal/Modal";
+import ModalHeader from "./modal/ModalHeader";
+import ModalTitle from "./modal/ModalTitle";
+import ModalBody from "./modal/ModalBody";
+import ModalFooter from "./modal/ModalFooter";
+import { Link } from "react-router-dom";
 import hangman1 from "./images/hangman1.jpg";
 import hangman2 from "./images/hangman2.jpg";
 import hangman3 from "./images/hangman3.jpg";
@@ -103,14 +108,21 @@ const Multiplayer = () => {
         <SetWordModal
           show={wordModal}
           onClose={() => setWordModal(false)}
-          title={"Multiplayer"}
           word={word}
           setWord={setWord}
         />
-        <Modal show={isOpenModal} onClose={hideModal} title={endMessage} score={countPoints()}>
-          <p>Bonus points: {bonus}</p>
-          <p>Total Score: {countPoints()}</p>
-          <p>The word is: {word}</p>
+        <Modal show={isOpenModal} onClose={hideModal}>
+          <ModalHeader>
+            <ModalTitle>{endMessage}</ModalTitle>
+          </ModalHeader>
+          <ModalBody>
+            <p>Bonus points: {bonus}</p>
+            <p>Total Score: {countPoints()}</p>
+            <p>The word is: {word}</p>
+          </ModalBody>
+          <ModalFooter>
+            <Link to="/"><button className="btn">Play Again</button></Link>
+          </ModalFooter>
         </Modal>
       </div>
     </>

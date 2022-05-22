@@ -41,6 +41,7 @@ body {
   font-family: 'crumbled-pixels';
   font-weight: 400;  
   margin: 0;
+  margin-left: 3.5%;
   line-height: 0;  
   animation: glitch1 2.5s infinite;
 }
@@ -332,7 +333,7 @@ modal.show .modal-content {
   display: grid, flex;
   gap: 2px;
   text-align: center;
-  width: 80%;
+  width: 100%;
   max-width: 650px;
 }
 

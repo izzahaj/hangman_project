@@ -12,7 +12,7 @@ const Modal = (props) => {
       timeout={{ enter: 0, exit: 300 }}
     >
       <div ref={nodeRef} className={`modal ${props.show ? 'show' : ''}`}>
-        <div className="modal-content"></div>
+        <div className="modal-content">{props.children}</div>
       </div>
     </CSSTransition>
   )
