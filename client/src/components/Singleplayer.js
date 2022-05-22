@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Stopwatch from "./Stopwatch";
+import hangman1 from "./images/hangman1.jpg";
+import hangman2 from "./images/hangman2.jpg";
+import hangman3 from "./images/hangman3.jpg";
+import hangman4 from "./images/hangman4.jpg";
+import hangman5 from "./images/hangman5.jpg";
+import hangman6 from "./images/hangman6.jpg";
+import hangman7 from "./images/hangman7.jpg";
 
 const Singleplayer = () => {
   const alphabets = ["A", "B", "C", "D", "E", "F", "G",
@@ -21,6 +28,8 @@ const Singleplayer = () => {
   const MAX_BONUS = 60000
   const bonus = (time > 60000 || status === "L") ? 0 : MAX_BONUS - time
   const endMessage = status === "W" ? "You won!" : "You lost!"
+  
+  const imagesHangman = [hangman1, hangman2, hangman3, hangman4, hangman5, hangman6, hangman7];
 
   const showModal = () => {
     setIsOpenModal(true)
@@ -87,6 +96,7 @@ const Singleplayer = () => {
       <div className="container-1 center">
         <h1>Singleplayer</h1>
         <Stopwatch start={start} time={time} setTime={setTime}/>
+        <img src = {imagesHangman[6-lives]} width="325" height="280" alt="hangman"/>
         <h2 className="hidden-word">{hiddenWord}</h2>
         <div className="flex-container">
           {alphabets.map((a, i) => <button className="letter-btn" key={i} disabled={guessed.includes(a)} onClick={() => {
