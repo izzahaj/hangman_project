@@ -28,7 +28,7 @@ const Singleplayer = () => {
   const [correct, setCorrect] = useState([])
   const [guessed, setGuessed] = useState([])
   const [lives, setLives] = useState(6) // 6 lives
-  const [status, setStatus] = useState("Ongoing")
+  const [status, setStatus] = useState("")
   const hiddenWord = word.toUpperCase().split("").map(letter => correct.includes(letter) ? letter : "_").join(" ")
   let guesses = guessed.join(" ")
   const MAX_SCORE = 24000
@@ -93,14 +93,14 @@ const Singleplayer = () => {
   }, [])
 
   useEffect(() => {
-    if ((lives >= 0 && lives < 6) && status === "Ongoing") {
+    if ((lives >= 0) && status === "Ongoing") {
       checkWin()
     }
   })
 
   return (
     <>
-      <div className="container-1 center col-12">
+      <div className="container-1 center">
         <div>
           { hiddenWord === "" ? <h1>Loading...</h1>
             : 
@@ -113,6 +113,7 @@ const Singleplayer = () => {
                 {alphabets.map((a, i) => <button className="letter-btn" key={i} disabled={guessed.includes(a)} onClick={() => {
                   if (!start) {
                     setStart(true)
+                    setStatus("Ongoing")
                   }
                   if (word.includes(a) && !guesses.includes(a)) {
                     setCorrect([...correct, a])
@@ -143,8 +144,8 @@ const Singleplayer = () => {
             <p>The word is: {word}</p>
           </ModalBody>
           <ModalFooter>
-            <button className="btn" onClick={() => setShowSubmit(true)}>Submit Score</button>
-            <Link to="/"><button className="btn">Play Again</button></Link>
+            <button className="button" onClick={() => setShowSubmit(true)}>Submit Score</button>
+            <Link to="/"><button className="button">Play Again</button></Link>
               <SubmitScore
                 show={showSubmit}
                 onClose={() => setShowSubmit(false)}

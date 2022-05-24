@@ -30,18 +30,13 @@ body {
   background-color: #333;
 }
 
-.creepy-text-container {
-  margin-bottom: 50px;
-}
-
 .creepy-text {
   color: #fff;
-  font-size: 4em;
-  letter-spacing: 8px;
+  font-size: 3.5em;
+  letter-spacing: 6px;
   font-family: 'crumbled-pixels';
   font-weight: 400;  
   margin: 0;
-  margin-left: 3.5%;
   line-height: 0;  
   animation: glitch1 2.5s infinite;
 }
@@ -221,20 +216,7 @@ h1:nth-child(3) {
   }
 }
 
-.form-control {
-  border-width: 0.5px;
-  border-color: lightgray;
-  border-radius: 2px;
-  padding: 3px;
-  margin: 3px;
-}
-
-.alert {
-  color: red;
-  padding: 2px;
-}
-
-.modal {
+.modal-2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -249,63 +231,61 @@ h1:nth-child(3) {
   pointer-events: none;
 }
 
-.modal.show {
+.modal-2.show {
   opacity: 1;
   pointer-events: visible;
 }
 
-.modal.enter-done {
+.modal-2.enter-done {
   opacity: 1;
   pointer-events: visible;
 }
 
-.modal.exit {
+.modal-2.exit {
   opacity: 0;
 }
 
-.modal.enter-done .modal-content {
+.modal-2.enter-done .modal-content-2 {
   transform: translateY(0);
 }
 
-.modal.exit .modal-content {
+.modal-2.exit .modal-content-2 {
   transform: translateY(-200px);
 }
 
-.modal-content {
+.modal-content-2 {
   width: 500px;
   background-color: #333;
   border-radius: 6px;
-  transform: translateY(-200px);
+  transform: translateY(-50px);
   transition: all 0.3s ease-in-out;
 }
 
-modal.show .modal-content {
+modal-2.show .modal-content-2 {
   transform: translateY(0)
 }
 
-.modal-header, .modal-footer {
+.modal-header-2, .modal-footer-2 {
   padding: 10px;
 }
 
-.modal-title {
+.modal-title-2 {
   margin: 0;
 }
 
-.modal-body {
+.modal-body-2 {
   padding: 10px;
 }
 
 .btn-home {
   background-color: #333;
-  flex: 1 1 auto;
+  flex: auto;
   margin: 2px;
   padding: 8px;
   border: none;
   border-radius: 5px;
   transition: 0.2s;
-  text-align: center;
-  color: white;
-  width: 70%;
+  color: #fff;
 }
 
 .btn-home:hover {
@@ -316,8 +296,13 @@ modal.show .modal-content {
   animation: glitch2 2.5s infinite;
 }
 
-.letter-btn:hover, .btn:hover, .btn-close:hover {
+.button:hover, .button-2:hover {
   filter: brightness(0.85)
+}
+
+.letter-btn:hover {
+  filter: brightness(0.85);
+  animation: glitch3 2.5s infinite;
 }
 
 .container-1 {
@@ -369,28 +354,28 @@ modal.show .modal-content {
   pointer-events: none;
 }
 
-.btn {
+.button {
   background-color: #77AF9C;
   flex: 1 1 auto;
   margin: 2px;
-  padding: 8px;
+  padding: 5px;
   border: none;
   border-radius: 5px;
   transition: 0.2s;
   text-align: center;
   color: white;
-  width: 70%;
+  width: 100%;
 }
 
-.btn-close {
+.button-2 {
   background-color: #A8A9AD;
   flex: 1 1 auto;
-  margin: 2px;
-  padding: 8px;
+  margin: 4px;
+  padding: 5px;
   border: none;
   border-radius: 5px;
   transition: 0.2s;
   text-align: center;
   color: white;
-  width: 70%;
+  width: 100%;
 }

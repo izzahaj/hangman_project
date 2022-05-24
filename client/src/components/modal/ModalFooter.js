@@ -2,7 +2,7 @@ import React from "react";
 
 const ModalFooter = (props) => {
   return (
-    <div className="modal-footer">{props.children}</div>
+    <div className="modal-footer-2">{props.children}</div>
   )
 }
 

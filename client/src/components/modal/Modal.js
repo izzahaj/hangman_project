@@ -11,8 +11,8 @@ const Modal = (props) => {
       unmountOnExit
       timeout={{ enter: 0, exit: 300 }}
     >
-      <div ref={nodeRef} className={`modal ${props.show ? 'show' : ''}`}>
-        <div className="modal-content">{props.children}</div>
+      <div ref={nodeRef} className={`modal-2 ${props.show ? 'show' : ''}`}>
+        <div className="modal-content-2">{props.children}</div>
       </div>
     </CSSTransition>
   )

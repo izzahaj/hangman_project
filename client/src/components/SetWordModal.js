@@ -22,11 +22,11 @@ const SetWordModal = (props) => {
         <ModalBody>
           <label htmlFor="word">Please enter a word:</label>
           <br/>
-          <input className="form-control" type="text" name="word" onChange={e => props.setWord(e.target.value)} required/>       
+          <input className="form-control form-control-sm" type="text" name="word" onChange={e => props.setWord(e.target.value)} required/>       
         </ModalBody>
         <ModalFooter>
-          <button className="btn" type="submit">Play</button>
-          <Link to="/"><button className="btn-close">Back to Home</button></Link>
+          <button className="button" type="submit">Play</button>
+          <Link to="/"><button className="button-2">Back to Home</button></Link>
         </ModalFooter>
       </form>
     </Modal>

@@ -102,15 +102,8 @@ const Multiplayer = () => {
         <h3>Letters used:</h3>
         <h3>{guesses}</h3>
         <h3>Lives left: {lives < 0 ? 0 : lives}</h3>
-        <h3>{status}</h3>
       </div>
       <div className="container-1">
-        <SetWordModal
-          show={wordModal}
-          onClose={() => setWordModal(false)}
-          word={word}
-          setWord={setWord}
-        />
         <Modal show={isOpenModal} onClose={hideModal}>
           <ModalHeader>
             <ModalTitle>{endMessage}</ModalTitle>
@@ -121,9 +114,15 @@ const Multiplayer = () => {
             <p>The word is: {word}</p>
           </ModalBody>
           <ModalFooter>
-            <Link to="/"><button className="btn">Play Again</button></Link>
+            <Link to="/"><button className="button">Play Again</button></Link>
           </ModalFooter>
         </Modal>
+        <SetWordModal
+          show={wordModal}
+          onClose={() => setWordModal(false)}
+          word={word}
+          setWord={setWord}
+        />
       </div>
     </>
   )
