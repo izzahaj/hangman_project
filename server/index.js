@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./models/UserModel.js";
-import path from "path"
 
 const app = express()
 const PORT = process.env.PORT || 5000;
@@ -52,10 +51,3 @@ app.post('/api/add-user', async(req, res) => {
     })
   }
 })
-
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-  app.use(express.static('../client/build'))
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '../client/build/index.html'))
-  })
-}
