@@ -13,7 +13,6 @@ const SubmitScore = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // http POST request here
     const token = document.querySelector('meta[name="csrf-token"]')
     const url = "http://localhost:5000/api/add-user"
 
