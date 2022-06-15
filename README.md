@@ -7,5 +7,5 @@
 5. Now you can play the game on http://localhost:3000/
 
 ### Deployed Version 
-You can find the repository for the deployed version of the app here: https://github.com/izzahaj/hangman-project-client
+You can find the repository for the deployed version of the app here: https://github.com/izzahaj/hangman-project-client  
 Link to live app: https://tothegallows.netlify.app/
