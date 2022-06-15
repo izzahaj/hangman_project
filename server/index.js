@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import User from "./models/UserModel.js";
+import { config } from "dotenv";
 
 const app = express()
 const PORT = process.env.PORT || 5000;
